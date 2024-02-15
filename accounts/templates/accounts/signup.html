@@ -1,0 +1,39 @@
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{% static 'whitebox/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'whitebox/css/accounts.css' %}">
+    <title>SINGUP</title>
+ </head>
+ <h1 class="h1">SINGUP</h1>
+<form method="post" form-group class="form">
+    {% csrf_token %}
+    <div>
+        <label >ユーザーID<small class="or">または</small>メールアドレス</label><br>
+        <input type="text" name="username" class="id_ps" placeholder="ユーザーID">
+    </div>
+    <!-- <div>
+        <label >メールアドレス</label><br>
+        <input type="text" name="e-mailadress" class="id_ps" placeholder="メールアドレス">
+    </div> -->
+    <div>
+        <label >パスワード</label><br>
+        <input type="password" name="password1" class="id_ps" placeholder="パスワード">
+    </div>
+    <div>
+        <label >パスワード確認用</label><br>
+        <input type="password" name="password2" class="id_ps" placeholder="パスワード確認用">
+    </div>
+    <div class="ps">
+        <small >パスワードは８文字以上で設定してください</small><br>
+    </div>
+    <div class="attention">
+        {% if form.errors %}
+        <span>利用できないユーザーIDやパスワードの可能性があります。<br>入力内容を再度ご確認ください。</span>
+    </div>
+    {% endif %}
+    <button type="submit" class="btn btn-success m-2">アカウント作成</button>
+    </form>
+{% endblock %}
