@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}commnt{% endblock title%}
+{% block body %}
+<div class="card  mt-5 mx-auto" style="width:90%">
+        <div class="row">
+            <div class="card">
+                <div class="card-header " >
+                    {{whitebox.title}}
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item" >{{whitebox.text}}</li>
+                  <li class="list-group-item" >{{whitebox.user}}</li>
+                </ul>
+            </div>
+        </div> 
+</div>
+
+<div class="card  mt-5 mx-auto" style="width:90%">
+        <form method="POST" id="comment-form">
+          {% csrf_token %} 
+            <div class="row">
+                <div class="card">
+                    <div class="card-header " >
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item" >{{form.text}}</li>
+                      <!-- #form.as_p以外にもフォームを表示する方法がある。
+                      その一例がform.フィールド名である。
+                      これはフィールドを一つずつ表示することができるため見た目を整えやすくなる。 -->
+                    </ul>
+                    <button type="submit" class="btn btn-outline-warning float-right">comment</button>
+                </div>
+            </div> 
+        </form>
+</div>
+{% endblock body%}

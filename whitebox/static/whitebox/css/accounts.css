@@ -1,0 +1,124 @@
+body{
+    width: 100%;
+    text-align: center;
+}
+.form{
+    width: 500px;
+    height: 400px;
+    margin: 0 auto;
+}
+.h1{
+    text-align: center;
+    font-size: 70px;
+    color: #949494;
+    margin: 120px auto 50px auto;
+}
+label{
+    font-size: 30px;
+    margin: 20px 0;
+    color: #949494;
+}
+.or {
+    font-size: 20px;
+    text-align: center;
+}
+.id_ps{
+    width: 80%;
+    border: 1px solid #949494;
+    font-size: 20px;
+    text-align: left;
+    padding: 10px 10px;
+    margin: 20px auto;
+}
+.ps{
+    padding: 10px;
+    color: #949494;
+}
+.attention {
+    text-align: center;
+    margin: 10px 0;
+}
+.btn{
+    background-color: #949494;
+    border-radius: 2px;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 30px;
+}
+button:hover {
+    opacity: 0.5;
+}
+.signup_button {
+    width: 100%;
+    color: rgb(97, 161, 204);
+    margin: 0 auto;
+}
+.signup_button:hover {
+    opacity: 0.5;
+}
+@media screen and (max-width: 390px){
+    body{
+        width: 100%;
+        text-align: center;
+    }
+    .form{
+        width: 290px;
+        height: 400px;
+        margin: 0 auto;
+    }
+    .h1{
+        text-align: center;
+        font-size: 50px;
+        color: #949494;
+        margin: 120px auto 50px auto;
+    }
+    label{
+        font-size: 17px;
+        margin: 20px 0;
+        color: #949494;
+    }
+    .or {
+        font-size: 10px;
+        text-align: center;
+    }
+    .id_ps{
+        width: 80%;
+        border: 1px solid #949494;
+        font-size: 17px;
+        text-align: left;
+        padding: 10px 10px;
+        margin: 20px auto;
+    }
+    .ps{
+        padding: 10px;
+        color: #949494;
+    }
+    .attention {
+        text-align: center;
+        margin: 10px 0;
+    }
+    .btn{
+        background-color: #949494;
+        border-radius: 2px;
+        color: white;
+        padding: 10px 20px;
+        margin-top: 30px;
+    }
+    button:hover {
+        opacity: 0.5;
+    }
+    .signup_button {
+        width: 100%;
+        color: rgb(97, 161, 204);
+        margin: 0 auto;
+    }
+    .signup_button:hover {
+        opacity: 0.5;
+    }
+}
+
+
+
+
+
+

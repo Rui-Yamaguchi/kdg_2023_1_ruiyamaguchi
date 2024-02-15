@@ -1,0 +1,227 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{%static 'whitebox/css/reset.css'%}">
+    <link rel="stylesheet" href="{%static 'whitebox/css/style.css'%}">
+    <title>WHITEBOX</title>
+</head>
+<body>
+    <a id="top">
+    <header>
+        <div class="first">
+            <a href="#top">
+                <p class="header_logo"><img class="atama kao" src="{% static 'whitebox/images/images_logo.png' %}"></p>
+            </a>
+            <h1 class="kao"><a href="#top">WHITEBOX</a></h1>
+            <nav class="header_nav">
+                <ul>
+                    <li class="header_1">
+                        <a href="#About">About</a>
+                    </li>
+                    <li class="header_2">
+                        <a href="#Member">Member</a>
+                    </li>
+                    <li class="header_3">
+                        <a href="#Anthology">Anthology</a>
+                    </li>
+                    <li class="header_4">
+                        <a href="#Sns">Sns</a>
+                    </li>
+                    {% if request.user.is_authenticated %}
+                    <li class="header_5">
+                        <a href="{% url 'accounts:logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="header_5">
+                        <a href="{% url 'accounts:login' %}" target="_self">Login</a>
+                    </li>
+                    {% endif %}
+                    <li class="header_6">
+                        <!-- <a href="#Communication">Communication</a> -->
+                        <a href="{% url 'whitebox:index2' %}">Communication</a>
+                    </li>
+                    </ul>
+                </ul>
+            </nav>
+        </div>
+        <p class="header_img">
+            <img src="{% static 'whitebox/images/imges_header.png' %}">
+        </p>
+    </a>
+    </header>
+    <main>
+        <article>
+            <section class="about">
+                <h2 a id="About">About</h2>
+                <p>SNS上で大学生時代に繋がった仲間たちで結成したグループ"WHITEBOX"。<br>作詞・作曲そしてレコーディングを自身らで行う。また音楽のみならず、映像クリエイターとしての側面を持ち、MVに至るまで全て自身らの手でプロデュースを行う。<br>現在では関東で共同生活を行いながら、音楽・動画の発信を続けており、TikTokやYouTubeで多くの支持を集め現在総フォロワー数100万人を超えるグループである。</p>
+            </section>
+            <section>
+                <h2 a id="Member">Member</h2>
+                <div class="memberzukan">
+                    <ul>
+                        <li>
+                            <a href="{% url 'whitebox:Howaito' %}" target="_self">
+                                <img src="{% static 'whitebox/howaito/images_howaito.png' %}" alt="ホワイト">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'whitebox:Rio' %}" target="_self">
+                                <img src="{% static 'whitebox/Rio/images_Rio.png' %}" alt="Rio">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'whitebox:ToudaiAka' %}" target="_self">
+                                <img src="{% static 'whitebox/aka/images_aka.png' %}" alt="灯橙あか">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'whitebox:Teddy' %}" target="_self">
+                                <img src="{% static 'whitebox/teddy/images_teddy.png' %}" alt="テディ">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'whitebox:Coco' %}" target="_self">
+                                <img src="{% static 'whitebox/coco/images_coco.jpg' %}" alt="ココ">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'whitebox:Will' %}" target="_self">
+                                <img src="{% static 'whitebox/will/images_will.jpg' %}" alt="うぃる">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <h2 a id="Anthology">Anthology</h2>
+            </section>
+            <section>
+                <h3 class="music_list">《オリジナル楽曲》</h3>
+                <div class="original">
+                    <h4>リバーブ</h4>
+                    <div class="single single_1">
+                        <a href="https://linkco.re/crqQU4pE?lang=ja" target="_blank">
+                            <img src="{% static 'whitebox/images/images_original_1.png' %}">
+                        </a>
+                        <p>WHITEBOXとして初のオリジナル曲。<br>この曲を聞けばグループの良さや誰かの人生を彩るような曲を作りたいという信念がきっと伝わる！<br>一緒に成長していこうという気持ちが込められた応援ソングです。</p>
+                    </div>
+                </div>
+                <div class="original">
+                    <h4>バレンタインマーチ</h4>
+                    <div class="single single_2">
+                        <a href="https://linkco.re/6e7U87p2?lang=ja" target="_blank">
+                            <img src="{% static 'whitebox/images/images_original_2.png' %}">
+                        </a>
+                        <p>バレンタインにもホワイトデーにもなおかつ、<br>365日聴けるようなそんな曲。<br> 恋愛のあるあるだったり、恋への願望だったり、色々詰め込まれた歌詞と、ちょっとユニークなアレンジがくせになる青春ラブソング！恋愛の『初々しさ』や『甘酸っぱさ』、想いを伝えるのに悩んでるという人に『勇気』を伝えられればいいなという思いが込められています。</p>
+                    </div>
+                </div>
+                <div class="original">
+                    <h4>スターゲイザー</h4>
+                    <div class="single single_3">
+                        <a href="https://linkco.re/dTY0VpRf?lang=ja" target="_blank">
+                            <img src="{% static 'whitebox/images/images_original_3.png' %}">
+                        </a>
+                        <p>『日々何かを頑張る人が灯を絶やさずに進み続けられるように』という想いを込めた曲。<br>自分と向き合い勝負する人たちに届いて、<br>そんな人たちの糧となりますように。<br>苦しくて眠れない、<br>そんな夜に聴いてほしい一曲です。</p>
+                    </div>
+                </div>
+                <div class="original">
+                    <h4>マーメイド</h4>
+                    <div class="single single_4">
+                        <a href="https://linkco.re/Tt4C1cm9?lang=ja" target="_blank">
+                            <img src="{% static 'whitebox/images/images_original_4.png' %}">
+                        </a>
+                        <p>誰もが経験したことがあるかもしれない。<br>辛い日々に耐えられなくなってしまって何もかも投げ出したくなったそんな時。<br>そんな辛い日々に向き合う姿、それを乗り越えて生きる希望を見つけていく物語を綴っています。<br>作詞者の過去の心情を重ねた歌詞が、この曲を聞いた人に希望を与えられる曲になっています。</p>
+                    </div>
+                    <h4>空想ガール</h4>
+                    <div class="single single_5">
+                        <a href="https://linkco.re/afNctM6a?lang=ja" target="_blank">
+                            <img src="{% static 'whitebox/images/images_original_5.png' %}">
+                        </a>
+                        <p>ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+                        </div>                    
+                    <h4>肉汁ロック</h4>
+                    <div class="single single_6">
+                        <a href="https://linkco.re/pY2X8F8Z?lang=ja" target="_blank">
+                            <img src="{% static 'whitebox/images/images_original_6.png' %}">
+                        </a>
+                        <p>ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+                    </div>
+                </div>
+                <div class="music_list">
+                    <h3>《VSマッシュアップシリーズ》</h3>
+                        <div class="massyuappu">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLRbXfepbw6EwcfpVmqx9AMvr75jPDBgZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>                        </div>
+                </div>
+                <div class="music_list">
+                    <h3>《◯×ゲーム》</h3>
+                        <div class="marubatu">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLRbXfepbw6EyykwCLV8hQpLIXS2dK0rju" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                </div>
+                <div class="music_list">
+                    <h3>《フリップゲーム》</h3>
+                        <div class="furippu">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLRbXfepbw6EzlQ3aRWTPFxm9786UkeJct" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                </div>
+                <div class="music_list">
+                    <h3>《検定シリーズ》</h3>
+                        <div class="kentei">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLRbXfepbw6ExLsE17d2toH_cXbG15OPpM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                </div>
+                <div class="music_list">
+                    <h3>《歌詞しりとり》</h3>
+                        <div class="kashishiritori">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLRbXfepbw6EzqfzPPi9hCpK5j_2hjr9_2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                </div>
+                <div class="music_list">
+                    <h3>《WHITEBOX初心者オススメ動画》</h3>
+                        <div class="osusumedouga">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLRbXfepbw6EzYYvNVX5ccSEvmqRQ8vnMn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                </div>
+            </section>
+        </article>
+    </main>
+        <div class="sns-icon">
+            <div a id="Sns" class="sns">
+                <ul>
+                    <li class="sns">
+                        <div class="sns-links_1">
+                            <a class="icon-external-YouTube" href="https://www.youtube.com/@WHITEBOX123" target="_blank">
+                                <img src="{% static 'whitebox/images/SNS/IMG_YouTube.PNG' %}" alt="YouTube">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="sns">
+                        <div class="sns-links_2">
+                            <a class="icon-external-Twitter" href="https://twitter.com/WHITEBOX123" target="_blank">
+                                <img src="{% static 'whitebox/images/SNS/IMG_Twitter.PNG' %}" alt="Twitter">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="sns">
+                        <div class="sns-links_3">
+                            <a class="icon-external-Instagram" href="https://www.instagram.com/whitebox123/?hl=ja" target="_blank">
+                                <img src="{% static 'whitebox/images/SNS/IMG_instagram.PNG' %}" alt="Instagram">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="sns">
+                        <div class="sns-links_4">
+                            <a class="icon-external-Tiktok" href="https://www.tiktok.com/@whitebox1234?is_from_webapp=1&sender_device=pc" target="_blank">
+                                <img src="{% static 'whitebox/images/SNS/IMG_TikTok.PNG' %}" alt="TikTok">
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    <footer><a href="#top">WHITEBOX</a></footer>
+    
+</body>
+</html>

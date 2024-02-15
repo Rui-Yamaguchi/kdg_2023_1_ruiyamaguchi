@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}delete{% endblock title%}
+{% block body %}
+<div class="alert alert-info"  role="alert">
+    This page is a "delete-only page". You can delete items displayed here.
+</div>
+<div class="mx-auto"  style="width:90%">
+    <form method="POST">{% csrf_token %}
+        <div class="card my-3 mx-auto" style="width:80%">
+            <div class="card-body">
+              <h2 class="card-title">{{object.title}}</h2>
+              <h5 class="card-text">{{object.text}}</5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">degree:{{object.degree}}</li>
+              <li class="list-group-item">user:ユーザーネーム</li>
+              <li class="list-group-item">time:時間</li>
+            </ul>
+            <button type="submit" class="btn btn-outline-danger">Remove「{{object.title}}」</button>
+            
+          </div>   
+    </form>
+</div>
+
+
+
+{% endblock body%}

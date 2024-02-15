@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}detail{% endblock title %}
+{% block body %}
+<div class="card my-3 mx-auto" style="width:80%">
+    <div class="card-body">
+      <h2 class="card-title">{{object.title}}</h2>
+      <h5 class="card-text">{{object.text}}</5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">degree:{{object.degree}}</li>
+      <li class="list-group-item">user:ユーザーネーム</li>
+      <li class="list-group-item">time:時間</li>
+    </ul>
+    <div class="card-body">
+        <a href="{% url 'whitebox:whitebox-update' object.pk %}" class="btn btn-outline-primary float-right mx-1">update</a>
+        <a href="{% url 'whitebox:whitebox-delete' object.pk %}" class="btn btn-outline-danger float-right mx-1">delete</a>
+        <a href="{% url 'whitebox:whitebox-list' %}" class="btn btn-outline-info float-right mx-1">←list</a>
+    </div>
+  </div>
+
+  
+{% endblock body %}
