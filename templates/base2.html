@@ -1,0 +1,33 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'whitebox/css/reset.css'%}">
+    <link rel="stylesheet" href="{%static 'whitebox/css/comments.css'%}">
+    <title>{% block title %}{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <div class="row mx-auto" style="width:100%">        
+            <nav class="navbar navbar-dark bg-dark">
+            {% if request.user.is_authenticated %}
+              <label>トップ</label>
+              <a href="{%url 'whitebox:index'%}" class="col-2"><i class="fa-solid fa-house fa-3x" style="color: rgb(0, 191, 255)"></i></a>    
+              <a href="{%url 'whitebox:whitebox-list'%}" class="col-2"><i class="fa-solid fa-list fa-3x" style="color: rgb(0, 191, 255)"></i></a>
+              <a href="{%url 'whitebox:whitebox-create'%}"class="col-2"><i class="fa-solid fa-plus fa-3x" style="color: rgb(0, 191, 255)"></i></a> 
+              <a href="#"class="col-2"><i class="fa-solid fa-user fa-3x" style="color: rgb(0, 191, 255)"></i></a> 
+              <a  href="{% url 'accounts:logout'%}"><i class="fa-solid fa-person-walking-arrow-right fa-3x"></i></a>
+            {% else %}
+              <a  href="{% url 'accounts:login'%}"><i class="fa-solid fa-right-to-bracket fa-3x"></i></a>
+              <a  href="{% url 'accounts:signup' %}"><i class="fa-solid fa-user-check fa-3x"></i></a>
+
+            {% endif %} 
+            </nav>
+  </div>
+{% block body %}{% endblock body %}
+</body>
+</html>

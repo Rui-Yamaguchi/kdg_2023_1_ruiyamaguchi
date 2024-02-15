@@ -1,0 +1,38 @@
+{% load static %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{% static 'whitebox/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'whitebox/css/accounts.css' %}">
+    <title>LOGIN</title>
+</head>
+<body>
+    <h1 class="h1">LOGIN</h1>
+    <form method="post" class="form">
+    <div>
+      <label >ユーザーID</label><br>
+      <input class="id_ps" name="username" placeholder="ユーザーID">
+    </div>
+    <div>
+      <label >パスワード</label><br>
+      <input type="password" class="id_ps" name="password" placeholder="パスワード">
+    </div>
+    {% csrf_token %}
+    {% for error in form.errors.values %}
+    <div>
+        {{ error }}
+        <span>ユーザー名またはパスワードが間違っています</span>
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn">ログインする</button>
+    </form>
+    <a class="signup_button" href="{% url 'accounts:signup' %}">新規アカウント登録はこちら</a>
+    {% endblock content %}
+
+
+
+
+
+
